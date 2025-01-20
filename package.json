@@ -2,7 +2,10 @@
   "name": "roman_numeral_app",
   "private": true,
   "version": "0.0.0",
+  "description": "Converts Arabic numerals to Roman Numerals",
   "type": "module",
+  "author": "Jared Collier",
+  "license": "ISC",
   "scripts": {
     "dev": "nodemon src/server/main.js -w src/server",
     "start": "NODE_ENV=production node src/server/main.js",
