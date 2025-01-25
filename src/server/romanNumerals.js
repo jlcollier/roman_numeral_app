@@ -22,7 +22,7 @@ const numeralTable = [
 
 //convertToRoman takes a whole number 1-3999 and returns its equivalent roman numeral
 //returns the string "error" on bad input
-function convertToRoman(n) {
+export function convertToRoman(n) {
     //Ensures input is a whole number 1-3999
     if (typeof n !== 'number' || n < 1 || n > 3999 || n % 1 !== 0) {
         return 'error'
@@ -60,7 +60,7 @@ function convertToRoman(n) {
     return romanStringParts.reverse().join('')
 }
 
-function aiToRoman(num) {
+export function aiToRoman(num) {
     if (num < 1 || num > 3999) {
         throw new Error("Input must be between 1 and 3999.");
     }
