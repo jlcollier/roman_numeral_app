@@ -12,9 +12,10 @@
     "build": "vite build"
   },
   "dependencies": {
+    "@adobe/react-spectrum": "^3.39.0",
     "express": "^4.18.2",
-    "react-dom": "^18.2.0",
     "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "vite-express": "*"
   },
   "devDependencies": {
