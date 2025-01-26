@@ -25,8 +25,10 @@ On the web page's form, input a whole number greater than 0 and less than 4,000.
 - Vite-Express
     - Tool that extends the power of Express. It enables a simpler (but opinionated) full-stack web app development process when using both React/Vite and Express by serving dynamically-generated, static files with no extra developer code.
 - React
-    - Front-end web framework
+    - Front-end web framework.
 - Vite
-    - Front-end code builder
+    - Front-end code builder.
+- Adobe React Spectrum
+    - React component library.
 
-For minor dependencies, see `package.json`
+For other dependencies, see `package.json`
