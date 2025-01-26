@@ -5,6 +5,7 @@ import "./App.css"
 
 function App() {
   const [inputNumber, setInputNumber] = useState("")
+  const [romanNumeral, setRomanNumeral] = useState("")
 
   async function onSubmit(event) {
     event.preventDefault()
@@ -12,20 +13,34 @@ function App() {
     let currentInputNumber = inputNumber
 
     if (currentInputNumber === "") {
+      //error
       return
     } else if (isNaN(+inputNumber)) {
+      //error
       return
     } else if (+inputNumber < 1) {
+      //error
       return
     } else if (+inputNumber > 3999) {
+      //error
       return
     } else if (+inputNumber % 1 !== 0) {
+      //error
       return
     }
 
     const response = await axios.get(`/romannumeral?query=${currentInputNumber}`)
 
-    console.log(response.data)
+    if (response.data.output) {
+      setRomanNumeral(response.data.output)
+    } else {
+      //error
+    }
+  }
+
+  function onInputChange(input) {
+    setInputNumber(input)
+    setRomanNumeral("")
   }
 
   return (
@@ -38,7 +53,7 @@ function App() {
             label="Enter a number"
             description="Input must be a whole number between 1 and 3999"
             value={inputNumber}
-            onChange={setInputNumber}
+            onChange={onInputChange}
             isRequired
           />
           <Button
@@ -48,6 +63,12 @@ function App() {
             Convert
           </Button>
         </Form>
+        { romanNumeral &&
+          <p>
+            Roman Numeral:{" "}
+            <span>{romanNumeral}</span>
+          </p>
+        }
       </div>
     </Provider>
   )
