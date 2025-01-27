@@ -19,7 +19,7 @@ and then navigate to\
 on a browser. The web page should be visible.
 
 ### Docker
-Optionally, this application may be run in a Docker container via a very rudimentary dockerfile. For instructions on how to set this up, download this repo locally, download Docker Desktop from `https://www.docker.com/products/docker-desktop/`, and follow Docker's instructions starting at the text "Build the Image" <a href="https://docs.docker.com/get-started/workshop/02_our_app/#:~:text=Build%20the%20image%20using%20the%20following%20commands%3A">here in Docker's Docs</a>.
+Optionally, this application may be run in a Docker container via a very rudimentary dockerfile. For instructions on how to set this up, download this repo locally, download Docker Desktop from `https://www.docker.com/products/docker-desktop/`, and follow Docker's instructions starting at the text "Build the Image" <a href="https://docs.docker.com/get-started/workshop/02_our_app/#:~:text=Build%20the%20image%20using%20the%20following%20commands%3A">here in Docker's Docs</a>. Any time that it says `3000`, in the instructions, instead use `8080`.
 
 # Usage
 On the web page's form, input a whole number greater than 0 and less than 4,000. Submit the form to see the input's Roman Numeral equivalent.
@@ -27,7 +27,7 @@ On the web page's form, input a whole number greater than 0 and less than 4,000.
 # Running tests locally
 To run unit tests on your machine for both the front end and backend, run `npm run test` in the terminal. Results will show in the terminal.
 
-# Advanced running
+# Advanced running and monitoring
 Several settings in the app may be configured with use of a environment file. For access to these settings, this file must be created manually in the root directory of the app download, and the file must be named `.env`. The enviroment file may have the following variables:
 - PORT
     - Specifies what port the app should run in. If this is not configured, the app will run on port 8080.
@@ -60,6 +60,8 @@ ROLLBAR_CODE=6d72301506e74adfba423b71b9c9d773
     - Testing framework.
 - Rollbar
     - Used for logging to a third-party monitoring dashboard (https://rollbar.io) that can be used for many things, from site metrics to finding critical failures. Rollbar can detect if the environment the logs come from is production or developement, which is conventient from an environment variable standpoint.
+- Dotenv
+    - Environment variable loader
 
 For other dependencies, see `package.json`.
 
