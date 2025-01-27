@@ -21,9 +21,12 @@
     "vite-express": "*"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^4.2.0",
+    "jsdom": "^26.0.0",
     "nodemon": "^3.0.1",
     "vite": "^5.0.2",
     "vitest": "^3.0.4"
