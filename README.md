@@ -32,6 +32,8 @@ On the web page's form, input a whole number greater than 0 and less than 4,000.
     - Front-end code builder.
 - Adobe React Spectrum
     - React component library.
+- Axios
+    - HTTP request library
 
 For other dependencies, see `package.json`.
 
