@@ -6,9 +6,17 @@ import "./App.css"
 function App() {
   const [inputNumber, setInputNumber] = useState("")
   const [romanNumeral, setRomanNumeral] = useState("")
+  const [submissionError, setSubmissionError] = useState("")
 
   async function onSubmit(event) {
     event.preventDefault()
+
+    setSubmissionError("")
+
+    if (inputNumber === "") {
+      setSubmissionError('You cannot submit an empty input')
+      return
+    }
 
     const response = await axios.get(`/romannumeral?query=${inputNumber}`)
 
@@ -22,6 +30,7 @@ function App() {
   function onInputChange(input) {
     setInputNumber(input)
     setRomanNumeral("")
+    setSubmissionError("")
   }
 
   function customValidator(value) {
@@ -52,6 +61,9 @@ function App() {
       <div className="app-wrapper">
         <h2>Roman numeral converter</h2>
         <Form onSubmit={onSubmit} maxWidth="size-3000">
+          { submissionError &&
+            <span aria-invalid="true" class="error">{submissionError}</span>
+          }
           <TextField
             type="number"
             label="Enter a number"
