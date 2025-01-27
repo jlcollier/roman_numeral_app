@@ -67,12 +67,10 @@ function App() {
             Convert
           </Button>
         </Form>
-        { romanNumeral &&
-          <p>
-            Roman Numeral:{" "}
-            <span>{romanNumeral}</span>
-          </p>
-        }
+        <p className="result-line">
+          Roman Numeral:
+        </p>
+        <p className="result-text">{romanNumeral}</p>
       </div>
     </Provider>
   )
