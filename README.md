@@ -18,6 +18,9 @@ and then navigate to\
 \
 on a browser. The web page should be visible.
 
+### Docker
+Optionally, this application may be run in a Docker container via a very rudimentary dockerfile. For instructions on how to set this up, download this repo locally, download Docker Desktop from `https://www.docker.com/products/docker-desktop/`, and follow Docker's instructions starting at the text "Build the Image" <a href="https://docs.docker.com/get-started/workshop/02_our_app/#:~:text=Build%20the%20image%20using%20the%20following%20commands%3A">here in Docker's Docs</a>.
+
 # Usage
 On the web page's form, input a whole number greater than 0 and less than 4,000. Submit the form to see the input's Roman Numeral equivalent.
 
