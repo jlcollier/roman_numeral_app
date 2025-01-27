@@ -25,16 +25,16 @@ Optionally, this application may be run in a Docker container via a very rudimen
 On the web page's form, input a whole number greater than 0 and less than 4,000. Submit the form to see the input's Roman Numeral equivalent.
 
 # Running tests locally
-To run unit tests on your machine for both the front end and backend, run `npm run test` in the terminal. Results will show in the terminal.
+To run unit tests on your machine for both the front-end and back-end, run `npm run test` in the terminal. Results will show in the terminal.
 
 # Advanced running and monitoring
-Several settings in the app may be configured with use of a environment file. For access to these settings, this file must be created manually in the root directory of the app download, and the file must be named `.env`. The enviroment file may have the following variables:
+Several settings in the app may be configured with use of a environment file. For access to these settings, this file must be created manually in the root directory of the app download, and the file must be named `.env`. The environment file may have the following variables:
 - PORT
     - Specifies what port the app should run in. If this is not configured, the app will run on port 8080.
 - ROLLBAR_CODE
     - Rollbar is a third-party software service and API that enables production and development logging. This allows devs to see metrics based on those logs and monitor errors and activity from the Rollbar app's dashboards. ROLLBAR_CODE is a string that is provided when a Rollbar account is created. This allows your app to be tied to a Rollbar account. If this is not configured, the app will work, but without Rollbar logging.
 
-## Example of an enviroment file
+## Example of an environment file
 
 ```
 PORT=4000
@@ -59,7 +59,7 @@ ROLLBAR_CODE=6d72301506e74adfba423b71b9c9d773
 - Vitest
     - Testing framework.
 - Rollbar
-    - Used for logging to a third-party monitoring dashboard (https://rollbar.io) that can be used for many things, from site metrics to finding critical failures. Rollbar can detect if the environment the logs come from is production or developement, which is conventient from an environment variable standpoint.
+    - Used for logging to a third-party monitoring dashboard (https://rollbar.io) that can be used for many things, from site metrics to finding critical failures. Rollbar can detect if the environment the logs come from is production or development, which is convenient from an environment variable standpoint.
 - Dotenv
     - Environment variable loader
 
