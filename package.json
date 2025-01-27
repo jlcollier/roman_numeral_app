@@ -15,9 +15,11 @@
   "dependencies": {
     "@adobe/react-spectrum": "^3.39.0",
     "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
     "express": "^4.18.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rollbar": "^2.26.4",
     "vite-express": "*"
   },
   "devDependencies": {
