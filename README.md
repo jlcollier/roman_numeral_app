@@ -36,6 +36,8 @@ On the web page's form, input a whole number greater than 0 and less than 4,000.
     - React component library. This library was chosen due to it being suggested to me by Adobe, and because it seamlessly implements light and dark mode based on the user's OS.
 - Axios
     - HTTP request library
+- Vitest
+    - testing framework
 
 For other dependencies, see `package.json`.
 

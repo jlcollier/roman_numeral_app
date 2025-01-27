@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "nodemon src/server/main.js -w src/server",
     "start": "NODE_ENV=production node src/server/main.js",
-    "build": "vite build"
+    "build": "vite build",
+    "test": "vitest"
   },
   "dependencies": {
     "@adobe/react-spectrum": "^3.39.0",
@@ -24,6 +25,7 @@
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^4.2.0",
     "nodemon": "^3.0.1",
-    "vite": "^5.0.2"
+    "vite": "^5.0.2",
+    "vitest": "^3.0.4"
   }
 }
