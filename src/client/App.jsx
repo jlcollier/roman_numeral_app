@@ -79,7 +79,7 @@ function App() {
     <Provider theme={defaultTheme} height="100%">
       <div className="app-wrapper">
         <h2>Roman numeral converter</h2>
-        <Form onSubmit={onSubmit} maxWidth="size-3000">
+        <Form onSubmit={onSubmit} maxWidth="300px" width="90%" minWidth="200px">
           { submissionError &&
             <span aria-invalid="true" className="error">{submissionError}</span>
           }
