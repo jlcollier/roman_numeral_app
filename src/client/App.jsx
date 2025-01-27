@@ -10,28 +10,9 @@ function App() {
   async function onSubmit(event) {
     event.preventDefault()
 
-    let currentInputNumber = inputNumber
+    const response = await axios.get(`/romannumeral?query=${inputNumber}`)
 
-    if (currentInputNumber === "") {
-      //error
-      return
-    } else if (isNaN(+inputNumber)) {
-      //error
-      return
-    } else if (+inputNumber < 1) {
-      //error
-      return
-    } else if (+inputNumber > 3999) {
-      //error
-      return
-    } else if (+inputNumber % 1 !== 0) {
-      //error
-      return
-    }
-
-    const response = await axios.get(`/romannumeral?query=${currentInputNumber}`)
-
-    if (response.data.output) {
+    if (response?.data?.output) {
       setRomanNumeral(response.data.output)
     } else {
       //error
@@ -43,18 +24,41 @@ function App() {
     setRomanNumeral("")
   }
 
+  function customValidator(value) {
+
+    if (value === "") {
+      return null
+    } else if (isNaN(+value)) {
+      return 'You must input a number'
+    }
+
+    let errorArr = []
+
+    if (+value < 1) {
+      errorArr.push('You must input a number that is 1 or greater')
+    } else if (+value >= 4000) {
+      errorArr.push('You must input a number less than 4000')
+    }
+
+    if (+value % 1 !== 0) {
+      errorArr.push('You must input a whole number')
+    }
+
+    return errorArr.length > 0 ? errorArr : null
+  }
+
   return (
     <Provider theme={defaultTheme} height="100%">
       <div className="app-wrapper">
         <h2>Roman numeral converter</h2>
-        <Form validationBehavior="native" onSubmit={onSubmit} maxWidth="size-3000">
+        <Form onSubmit={onSubmit} maxWidth="size-3000">
           <TextField
             type="number"
             label="Enter a number"
-            description="Input must be a whole number between 1 and 3999"
+            description={inputNumber ? "" : "Input must be a whole number between 1 and 3999"}
             value={inputNumber}
             onChange={onInputChange}
-            isRequired
+            validate={customValidator}
           />
           <Button
             type="submit"
