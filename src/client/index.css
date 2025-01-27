@@ -12,5 +12,11 @@ body {
 }
 
 .error {
-  color: red;
+  color: #FF816B;
+}
+
+@media (prefers-color-scheme: light) {
+  .error {
+    color: #d31510;
+  }
 }
