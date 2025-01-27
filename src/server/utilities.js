@@ -1,25 +1,3 @@
-//numeralTable is an ordered array, where the 0th
-//  element represents the arabic numbers ones column,
-//  the 1st element represents the tens column, and so
-//  forth.
-const numeralTable = [
-    {
-        unit: 'I',
-        pentaUnit: 'V',
-    },
-    {
-        unit: 'X',
-        pentaUnit: 'L'
-    },
-    {
-        unit: 'C',
-        pentaUnit: 'D'
-    },
-    {
-        unit: 'M'
-    },
-]
-
 //convertToRoman takes a whole number 1-3999 and returns its equivalent roman numeral
 //returns the string "error" on bad input
 export function convertToRoman(n) {
@@ -27,6 +5,28 @@ export function convertToRoman(n) {
     if (typeof n !== 'number' || n < 1 || n > 3999 || n % 1 !== 0) {
         return 'error'
     }
+
+    //numeralTable is an ordered array, where the 0th
+    //  element represents the arabic numbers ones column,
+    //  the 1st element represents the tens column, and so
+    //  forth.
+    const numeralTable = [
+        {
+            unit: 'I',
+            pentaUnit: 'V',
+        },
+        {
+            unit: 'X',
+            pentaUnit: 'L'
+        },
+        {
+            unit: 'C',
+            pentaUnit: 'D'
+        },
+        {
+            unit: 'M'
+        },
+    ]
 
     //Column values is an array of the numerical values of the numbers
     //  columns ("ones", "tens", "hundreds", etc), starting with the smallest
@@ -60,6 +60,8 @@ export function convertToRoman(n) {
     return romanStringParts.reverse().join('')
 }
 
+// As explained in README, I've included this AI generated function here, and may
+//   use it in a future commit.
 export function aiToRoman(num) {
     if (num < 1 || num > 3999) {
         throw new Error("Input must be between 1 and 3999.");
