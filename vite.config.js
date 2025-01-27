@@ -8,6 +8,8 @@ export default defineConfig({
   test: defineVitestConfig({
     globals: true,
     environment: 'jsdom',
-    include: ['**/*.test.tsx', '**/*.test.jsx'],
+    include: ['**/*.test.js', '**/*.test.jsx'],
+    pool: "vmThreads",
+    setupFiles: ["./setupTests.js"],
   }),
 });
