@@ -25,6 +25,7 @@ app.get("/romannumeral", (req, res) => {
   // If we receive a falsey value or 'error' string from convertToRoman,
   //   we assume the input from the front end was invalid
   if (!romanNumeral || romanNumeral === 'error') {
+    //if we get here, it is strange behavior on the API caller: log as critical
     rollbar.critical(`
       400 error got past front end validation, 
       IP ${req.headers['x-forwarded-for'] || req.socket.remoteAddress}
