@@ -41,6 +41,8 @@ To run unit tests on your machine for both the front end and backend, run `npm r
     - HTTP request library.
 - Vitest
     - Testing framework.
+- Rollbar
+    - Used for logging to a third-party monitoring dashboard (https://rollbar.io) that can be used for many things, from site metrics to finding critical failures.
 
 For other dependencies, see `package.json`.
 
