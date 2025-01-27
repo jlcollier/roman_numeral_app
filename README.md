@@ -3,6 +3,8 @@ roman_numeral_app is a SPA that can take a user's input, a number written in the
 
 For a specification of the Roman Numeral system that is used in this app, see <a href="https://en.wikipedia.org/wiki/Roman_numerals">this Wikipedia page</a> under the section "Standard form".
 
+The app also implements both light and dark modes based on the user's OS.
+
 # Local Installation
 After navigating to the root folder of this downloaded repo in a unix-based terminal, run the following commands\
 \
@@ -31,7 +33,7 @@ On the web page's form, input a whole number greater than 0 and less than 4,000.
 - Vite
     - Front-end code builder.
 - Adobe React Spectrum
-    - React component library.
+    - React component library. This library was chosen due to it being suggested to me by Adobe, and because it seamlessly implements light and dark mode based on the user's OS.
 - Axios
     - HTTP request library
 
