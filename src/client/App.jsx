@@ -12,18 +12,28 @@ function App() {
     event.preventDefault()
 
     setSubmissionError("")
+    setRomanNumeral("")
 
     if (inputNumber === "") {
       setSubmissionError('You cannot submit an empty input')
       return
     }
 
-    const response = await axios.get(`/romannumeral?query=${inputNumber}`)
+    let response;
+    try {
+      response = await axios.get(`/romannumeral?query=${inputNumber}`)
+    } catch(err) {
+      if (err?.response?.data?.error) {
+        setSubmissionError(err.response.data.error)
+      } else {
+        setSubmissionError("Something went wrong on our server, please try again")
+      }
+    }
 
     if (response?.data?.output) {
       setRomanNumeral(response.data.output)
     } else {
-      //error
+      setSubmissionError("Something went wrong, please try again")
     }
   }
 

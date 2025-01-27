@@ -10,7 +10,7 @@ app.get("/romannumeral", (req, res) => {
   if (!romanNumeral || romanNumeral === 'error') {
     res.status(400).send({
       input: req.query.query,
-      error: "Invalid request" })
+      error: "Something was wrong with the input, try again" })
     return
   }
 
