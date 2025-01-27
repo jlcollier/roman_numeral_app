@@ -62,7 +62,7 @@ function App() {
         <h2>Roman numeral converter</h2>
         <Form onSubmit={onSubmit} maxWidth="size-3000">
           { submissionError &&
-            <span aria-invalid="true" class="error">{submissionError}</span>
+            <span aria-invalid="true" className="error">{submissionError}</span>
           }
           <TextField
             type="number"
