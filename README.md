@@ -1,6 +1,8 @@
 # Description
 roman_numeral_app is a SPA that can take a user's input, a number written in the Arabic Numeral system, and output the equivalent number in the Roman Numeral system. The valid input range for the app is whole numbers greater than 0 and less than 4,000.
 
+For a specification of the Roman Numeral system that is used in this app, see <a href="https://en.wikipedia.org/wiki/Roman_numerals">this Wikipedia page</a> under the section "Standard form".
+
 # Local Installation
 After navigating to the root folder of this downloaded repo in a unix-based terminal, run the following commands\
 \
