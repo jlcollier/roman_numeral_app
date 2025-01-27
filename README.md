@@ -33,4 +33,6 @@ On the web page's form, input a whole number greater than 0 and less than 4,000.
 - Adobe React Spectrum
     - React component library.
 
-For other dependencies, see `package.json`
+For other dependencies, see `package.json`.
+
+For the full packaging layout and dependency tree, see `package-lock.json`
