@@ -29,10 +29,10 @@ export function convertToRoman(n) {
     ]
 
     //Column values is an array of the numerical values of the numbers
-    //  columns ("ones", "tens", "hundreds", etc), starting with the smallest
-    const columnValues =  String(n).split('').map((s) => parseInt(s)).reverse()
+    //  columns ("ones", "tens", "hundreds", etc), starting with the largest
+    const columnValues =  String(n).split('').map((s) => parseInt(s))
     //romanStringParts is an array of our final answer that will have to be
-    //  reversed and concatenated after we are done with our for loop
+    //  concatenated after we are done with our for loop
     let romanStringParts = []
 
     //Process each numbers column in columnValues and turn it into its roman
@@ -40,28 +40,31 @@ export function convertToRoman(n) {
     //  numeralTable is used to determine what roman equivalents are used for
     //  what numbers column.
     for (let i = 0; i < columnValues.length; i++) {
+        //tableI is the index conversion for the numeralTable in regard to the
+        //number's arabic columns (they are in reverse order of each other)
+        let tableI = columnValues.length - 1 - i
         if (columnValues[i] > 0 && columnValues[i] < 4) {
             for (let j = 0; j < columnValues[i]; j++) {
-                romanStringParts.push(numeralTable[i].unit)
+                romanStringParts.push(numeralTable[tableI].unit)
             }
         } else if (columnValues[i] === 4) {
-            romanStringParts.push(numeralTable[i].unit + numeralTable[i].pentaUnit)
+            romanStringParts.push(numeralTable[tableI].unit + numeralTable[tableI].pentaUnit)
         } else if (columnValues[i] >= 5 && columnValues[i] <= 8) {
+            romanStringParts.push(numeralTable[tableI].pentaUnit)
             let afterPentaValue = columnValues[i] - 5
             for (let j = 0; j < afterPentaValue; j++) {
-                romanStringParts.push(numeralTable[i].unit)
+                romanStringParts.push(numeralTable[tableI].unit)
             }
-            romanStringParts.push(numeralTable[i].pentaUnit)
         } else if (columnValues[i] === 9) {
-            romanStringParts.push(numeralTable[i].unit + numeralTable[i + 1].unit)
+            romanStringParts.push(numeralTable[tableI].unit + numeralTable[tableI + 1].unit)
         }
     }
 
-    return romanStringParts.reverse().join('')
+    return romanStringParts.join('')
 }
 
 // As explained in README, I've included this AI generated function here, and may
-//   use it in a future commit.
+//   use it in a future commit. I've not added error handling.
 export function aiToRoman(num) {
     if (num < 1 || num > 3999) {
         throw new Error("Input must be between 1 and 3999.");
