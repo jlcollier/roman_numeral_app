@@ -1,5 +1,5 @@
 # Description
-roman_numeral_app is a SPA that can take a user's input, a number written in the Arabic Numeral system, and output the equivalent number in the Roman Numeral system. The valid input range for the app is whole numbers greater than 0 and less than 4,000.
+`roman_numeral_app` is a SPA that can take a user's input, a number written in the Arabic Numeral system, and output the equivalent number in the Roman Numeral system. The valid input range for the app is whole numbers greater than 0 and less than 4,000.
 
 For a specification of the Roman Numeral system that is used in this app, see <a href="https://en.wikipedia.org/wiki/Roman_numerals">this Wikipedia page</a> under the section "Standard form".
 
@@ -38,13 +38,15 @@ To run unit tests on your machine for both the front end and backend, run `npm r
 - Adobe React Spectrum
     - React component library. This library was chosen due to it being suggested to me by Adobe, and because it seamlessly implements light and dark mode based on the user's OS.
 - Axios
-    - HTTP request library
+    - HTTP request library.
 - Vitest
-    - testing framework
+    - Testing framework.
 
 For other dependencies, see `package.json`.
 
-For the full packaging layout and dependency tree, see `package-lock.json`
+For the full packaging layout and dependency tree, see `package-lock.json`.
 
 # Notes
-These days, many organizations like to see that developers can effectively utilize AI as part of their engineering process. In that light, I was unsure of what "[seeing my] development methodology in action" meant exactly. I assume that in this situation, where I am showcasing my ability to develop code, I would use no AI. But in the back of my mind, I have a very slight idea that AI might be desirable anyway. In any case, I've included two functions in `src/server/utilities.js` to convert to Roman Numerals. The first, which I developed without any help from the internet or AI, is called `convertToRoman`. I then generated a function using AI, which I named `aiToRoman`. Both work well, but I've not attached `aiToRoman` to the web application at this point.
+These days, many organizations like to see that developers can effectively utilize AI as part of their engineering process. In that light, I was unsure of what "[seeing my] development methodology in action" meant exactly. I assume that in this situation, where I am showcasing my ability to develop code, I would use no AI. But in the back of my mind, I have a very slight idea that AI might be desirable anyway.
+
+In any case, I've included two functions in `src/server/utilities.js` to convert to Roman Numerals. The first, which I developed without any help from the internet or AI, is called `convertToRoman`. I then generated a function using AI, which I named `aiToRoman`. Both work well, but I've not attached `aiToRoman` to the web application at this point.
