@@ -42,7 +42,7 @@ To run unit tests on your machine for both the front end and backend, run `npm r
 - Vitest
     - Testing framework.
 - Rollbar
-    - Used for logging to a third-party monitoring dashboard (https://rollbar.io) that can be used for many things, from site metrics to finding critical failures.
+    - Used for logging to a third-party monitoring dashboard (https://rollbar.io) that can be used for many things, from site metrics to finding critical failures. Rollbar can detect if the environment the logs come from is production or developement, which is conventient from an environment variable standpoint.
 
 For other dependencies, see `package.json`.
 
