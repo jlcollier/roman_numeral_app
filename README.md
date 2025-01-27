@@ -21,6 +21,9 @@ on a browser. The web page should be visible.
 # Usage
 On the web page's form, input a whole number greater than 0 and less than 4,000. Submit the form to see the input's Roman Numeral equivalent.
 
+# Running tests locally
+To run unit tests on your machine for both the front end and backend, run `npm run test` in the terminal. Results will show in the terminal.
+
 # Major Dependencies List
 - Node
     - JavaScript engine.
