@@ -24,6 +24,20 @@ On the web page's form, input a whole number greater than 0 and less than 4,000.
 # Running tests locally
 To run unit tests on your machine for both the front end and backend, run `npm run test` in the terminal. Results will show in the terminal.
 
+# Advanced running
+Several settings in the app may be configured with use of a environment file. For access to these settings, this file must be created manually in the root directory of the app download, and the file must be named `.env`. The enviroment file may have the following variables:
+- PORT
+    - Specifies what port the app should run in. If this is not configured, the app will run on port 8080.
+- ROLLBAR_CODE
+    - Rollbar is a third-party software service and API that enables production and development logging. This allows devs to see metrics based on those logs and monitor errors and activity from the Rollbar app's dashboards. ROLLBAR_CODE is a string that is provided when a Rollbar account is created. This allows your app to be tied to a Rollbar account. If this is not configured, the app will work, but without Rollbar logging.
+
+## Example of an enviroment file
+
+```
+PORT=4000
+ROLLBAR_CODE=6d72301506e74adfba423b71b9c9d773
+```
+
 # Major Dependencies List
 - Node
     - JavaScript engine.

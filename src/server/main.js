@@ -1,12 +1,15 @@
-import express from "express";
-import ViteExpress from "vite-express";
+import express from "express"
+import ViteExpress from "vite-express"
 import { convertToRoman } from "./utilities.js"
-import Rollbar from "rollbar";
+import Rollbar from "rollbar"
+import 'dotenv/config'
 
-const app = express();
+const app = express()
 
+// If no valid rollbar code is provided in the .env file, the app
+//   will work, it just won't have rollbar monitoring.
 const rollbar = new Rollbar({
-  accessToken: 'replace_with_ENV_var',
+  accessToken: process?.env?.ROLLBAR_CODE || "none",
   captureUncaught: true,
   captureUnhandledRejections: true,
 })
@@ -39,9 +42,11 @@ app.get("/romannumeral", (req, res) => {
   res.status(200).send({
     input: req.query.query,
     output: romanNumeral
-  });
-});
+  })
+})
 
-ViteExpress.listen(app, 8080, () =>
-  console.log("Server is listening on port 8080..."),
-);
+const port = process?.env?.PORT || 8080
+
+ViteExpress.listen(app, port, () =>
+  console.log(`Server is listening on port ${port}...`),
+)
