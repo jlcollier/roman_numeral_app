@@ -6,6 +6,8 @@ import "./App.css"
 function App() {
   const [inputNumber, setInputNumber] = useState("")
   const [romanNumeral, setRomanNumeral] = useState("")
+  // submissionError displays errors (mostly) not related to form validation,
+  //   such as server errors
   const [submissionError, setSubmissionError] = useState("")
 
   async function onSubmit(event) {
@@ -14,6 +16,9 @@ function App() {
     setSubmissionError("")
     setRomanNumeral("")
 
+    // This is a submission error instead of a validation error because
+    //   I didn't want there to be an error if the user erased their input
+    //   temporarily.
     if (inputNumber === "") {
       setSubmissionError('You cannot submit an empty input')
       return
@@ -24,8 +29,10 @@ function App() {
       response = await axios.get(`/romannumeral?query=${inputNumber}`)
     } catch(err) {
       if (err?.response?.data?.error) {
+        //400 error
         setSubmissionError(err.response.data.error)
       } else {
+        //500 or other errors if possible
         setSubmissionError("Something went wrong on our server, please try again")
       }
     }
@@ -33,6 +40,7 @@ function App() {
     if (response?.data?.output) {
       setRomanNumeral(response.data.output)
     } else {
+      //possibly an impossible error state, but we'll cover it anyway
       setSubmissionError("Something went wrong, please try again")
     }
   }
@@ -43,6 +51,7 @@ function App() {
     setSubmissionError("")
   }
 
+  //Adobe React Spectrum custom validation function
   function customValidator(value) {
 
     if (value === "") {
